@@ -12,30 +12,41 @@ namespace WpfApp_NetFx_EF6
     using System;
     using System.Collections.ObjectModel;
     
-    public partial class Customer
+    public partial class Employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Employee()
         {
+            this.Employees1 = new ObservableCollection<Employee>();
             this.Orders = new ObservableCollection<Order>();
-            this.CustomerDemographics = new ObservableCollection<CustomerDemographic>();
+            this.Territories = new ObservableCollection<Territory>();
         }
     
-        public string CustomerID { get; set; }
-        public string CompanyName { get; set; }
-        public string ContactName { get; set; }
-        public string ContactTitle { get; set; }
+        public int EmployeeID { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string Title { get; set; }
+        public string TitleOfCourtesy { get; set; }
+        public Nullable<System.DateTime> BirthDate { get; set; }
+        public Nullable<System.DateTime> HireDate { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string Region { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
-        public string Phone { get; set; }
-        public string Fax { get; set; }
+        public string HomePhone { get; set; }
+        public string Extension { get; set; }
+        public byte[] Photo { get; set; }
+        public string Notes { get; set; }
+        public Nullable<int> ReportsTo { get; set; }
+        public string PhotoPath { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableCollection<Employee> Employees1 { get; set; }
+        public virtual Employee Employee1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableCollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection<CustomerDemographic> CustomerDemographics { get; set; }
+        public virtual ObservableCollection<Territory> Territories { get; set; }
     }
 }

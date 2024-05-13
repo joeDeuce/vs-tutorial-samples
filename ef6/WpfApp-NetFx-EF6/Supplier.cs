@@ -12,16 +12,15 @@ namespace WpfApp_NetFx_EF6
     using System;
     using System.Collections.ObjectModel;
     
-    public partial class Customer
+    public partial class Supplier
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Supplier()
         {
-            this.Orders = new ObservableCollection<Order>();
-            this.CustomerDemographics = new ObservableCollection<CustomerDemographic>();
+            this.Products = new ObservableCollection<Product>();
         }
     
-        public string CustomerID { get; set; }
+        public int SupplierID { get; set; }
         public string CompanyName { get; set; }
         public string ContactName { get; set; }
         public string ContactTitle { get; set; }
@@ -32,10 +31,9 @@ namespace WpfApp_NetFx_EF6
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
+        public string HomePage { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection<Order> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection<CustomerDemographic> CustomerDemographics { get; set; }
+        public virtual ObservableCollection<Product> Products { get; set; }
     }
 }

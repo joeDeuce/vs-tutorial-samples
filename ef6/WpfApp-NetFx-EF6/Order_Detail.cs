@@ -21,5 +21,6 @@ namespace WpfApp_NetFx_EF6
         public float Discount { get; set; }
     
         public virtual Order Order { get; set; }
+        public virtual Product Product { get; set; }
     }
 }
